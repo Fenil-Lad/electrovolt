@@ -1,0 +1,76 @@
+/* Hero Section */
+.hero-section {
+  position: relative; /* Needed for the overlay to position correctly */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+  background-image: url('../../../public/static/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden; /* Ensures ::after stays within bounds */
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(to top, #0c0c0c, rgba(12, 12, 12, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: white;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+
+  /* Stronger text shadow for visibility */
+  text-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.7),
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.hero-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+ 
+  border: 2px solid white;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  background: white;
+  color: black;
+}
+
+.hero-button:hover {
+  background: transparent;
+  color: white; 
+}
